@@ -37,7 +37,15 @@ class MainWindow(QMainWindow):
         self.ui.btnRefresh.clicked.connect(self.refresh)
         #metodo per iniziare con la combo gia' compilata
         self.refresh()
-        
+
+    def showUser(self):
+        curidx=self.ui.cbUser.currentIndex()
+        try:
+            self.ui.lblMsg.text(elutenti[curidx])
+        except:
+            print("troppo presto")
+
+    
     def showMsg(self):
         #refresh di display
         #leggo text da oggetti su interfaccia
@@ -60,16 +68,24 @@ class MainWindow(QMainWindow):
     
 
     def refresh(self):
-        eltipi=gestoreTipi.selAllTipo()
-        self.ui.cbUser.clear()
-        for tupla in eltipi:
-            self.ui.cbUser.addItem(tupla[1])
+        eltipi.clear()
+        eltipo=gestoreTipi.selAllTipo()
+        for tupla in eltipo:
+            eltipi.append(tupla)
 
-        elutenti=gestoreUtenti.selAllUser()
+        elutenti.clear()
+        elutente=gestoreUtenti.selAllUser()
+        
+        for tupla in elutente:
+            elutenti.append(tupla)
+
+        self.ui.cbTipo.clear()
+        for tupla in eltipi:
+            self.ui.cbTipo.addItem(tupla[1],userData=tupla[0])
+
         self.ui.cbUser.clear()
         for tupla in elutenti:
-            self.ui.cbUser.addItem(tupla[2] + " " + tupla[1])
-
+            self.ui.cbUser.addItem(tupla[1] + " " + tupla[2],userData=tupla[0])
         
     def insnewuser(self):
         #recupero dati da interfaccia 
