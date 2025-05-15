@@ -27,3 +27,5 @@ class GestTipo:
         eltuple=cursel.fetchall()
         return eltuple
         #[(1,"visita ortopedica","ivrea",50),     ...]
+
+    

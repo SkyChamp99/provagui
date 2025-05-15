@@ -16,27 +16,37 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QDoubleSpinBox,
-    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
-    QWidget)
+    QFrame, QHBoxLayout, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(777, 583)
+        MainWindow.resize(620, 583)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.label_3 = QLabel(self.centralwidget)
+        self.label_3.setObjectName(u"label_3")
+        font = QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_3.addWidget(self.label_3)
+
         self.elTipo = QLineEdit(self.centralwidget)
         self.elTipo.setObjectName(u"elTipo")
-        font = QFont()
-        font.setFamilies([u"Roboto"])
-        font.setPointSize(11)
-        self.elTipo.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"Roboto"])
+        font1.setPointSize(11)
+        self.elTipo.setFont(font1)
         self.elTipo.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
 "padding:4px;")
 
@@ -44,7 +54,7 @@ class Ui_MainWindow(object):
 
         self.elSede = QLineEdit(self.centralwidget)
         self.elSede.setObjectName(u"elSede")
-        self.elSede.setFont(font)
+        self.elSede.setFont(font1)
         self.elSede.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
 "padding:4px;")
 
@@ -52,35 +62,94 @@ class Ui_MainWindow(object):
 
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        font1 = QFont()
-        font1.setFamilies([u"Roboto"])
-        font1.setPointSize(10)
-        self.label.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"Roboto"])
+        font2.setPointSize(10)
+        self.label.setFont(font2)
         self.label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.verticalLayout_3.addWidget(self.label)
 
         self.spCosto = QDoubleSpinBox(self.centralwidget)
         self.spCosto.setObjectName(u"spCosto")
-        self.spCosto.setFont(font)
+        self.spCosto.setFont(font1)
         self.spCosto.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.spCosto.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.spCosto.setMaximum(9999.989999999999782)
 
         self.verticalLayout_3.addWidget(self.spCosto)
 
-        self.btnPlus = QPushButton(self.centralwidget)
-        self.btnPlus.setObjectName(u"btnPlus")
-        font2 = QFont()
-        font2.setPointSize(16)
-        self.btnPlus.setFont(font2)
+        self.btnInsertTipo = QPushButton(self.centralwidget)
+        self.btnInsertTipo.setObjectName(u"btnInsertTipo")
+        font3 = QFont()
+        font3.setPointSize(16)
+        self.btnInsertTipo.setFont(font3)
 
-        self.verticalLayout_3.addWidget(self.btnPlus)
+        self.verticalLayout_3.addWidget(self.btnInsertTipo)
 
         self.cbTipo = QComboBox(self.centralwidget)
         self.cbTipo.setObjectName(u"cbTipo")
 
         self.verticalLayout_3.addWidget(self.cbTipo)
+
+        self.line = QFrame(self.centralwidget)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.Shape.HLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.verticalLayout_3.addWidget(self.line)
+
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setFont(font)
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_3.addWidget(self.label_2)
+
+        self.elLastname = QLineEdit(self.centralwidget)
+        self.elLastname.setObjectName(u"elLastname")
+        self.elLastname.setFont(font1)
+        self.elLastname.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
+"padding:4px;")
+
+        self.verticalLayout_3.addWidget(self.elLastname)
+
+        self.elFirstname = QLineEdit(self.centralwidget)
+        self.elFirstname.setObjectName(u"elFirstname")
+        self.elFirstname.setFont(font1)
+        self.elFirstname.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
+"padding:4px;")
+
+        self.verticalLayout_3.addWidget(self.elFirstname)
+
+        self.elMail = QLineEdit(self.centralwidget)
+        self.elMail.setObjectName(u"elMail")
+        self.elMail.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
+"padding:4px;")
+
+        self.verticalLayout_3.addWidget(self.elMail)
+
+        self.elPwd = QLineEdit(self.centralwidget)
+        self.elPwd.setObjectName(u"elPwd")
+        font4 = QFont()
+        font4.setFamilies([u"Arial"])
+        font4.setPointSize(11)
+        font4.setBold(True)
+        self.elPwd.setFont(font4)
+        self.elPwd.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
+"padding:4px;")
+
+        self.verticalLayout_3.addWidget(self.elPwd)
+
+        self.btnInsertUser = QPushButton(self.centralwidget)
+        self.btnInsertUser.setObjectName(u"btnInsertUser")
+
+        self.verticalLayout_3.addWidget(self.btnInsertUser)
+
+        self.cbUser = QComboBox(self.centralwidget)
+        self.cbUser.setObjectName(u"cbUser")
+
+        self.verticalLayout_3.addWidget(self.cbUser)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -95,22 +164,6 @@ class Ui_MainWindow(object):
         self.btnRefresh.setObjectName(u"btnRefresh")
 
         self.verticalLayout_4.addWidget(self.btnRefresh)
-
-        self.elCognome = QLineEdit(self.centralwidget)
-        self.elCognome.setObjectName(u"elCognome")
-        self.elCognome.setFont(font)
-        self.elCognome.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
-"padding:4px;")
-
-        self.verticalLayout_4.addWidget(self.elCognome)
-
-        self.elNome = QLineEdit(self.centralwidget)
-        self.elNome.setObjectName(u"elNome")
-        self.elNome.setFont(font)
-        self.elNome.setStyleSheet(u"border:2px solid #899999;border-radius:6;\n"
-"padding:4px;")
-
-        self.verticalLayout_4.addWidget(self.elNome)
 
         self.lblMsg = QLabel(self.centralwidget)
         self.lblMsg.setObjectName(u"lblMsg")
@@ -127,12 +180,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.lblMsg)
 
+        self.lineEdit_4 = QLineEdit(self.centralwidget)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+
+        self.verticalLayout_4.addWidget(self.lineEdit_4)
+
         self.btnWelcome = QPushButton(self.centralwidget)
         self.btnWelcome.setObjectName(u"btnWelcome")
-        font3 = QFont()
-        font3.setFamilies([u"Arial Narrow"])
-        font3.setPointSize(10)
-        self.btnWelcome.setFont(font3)
+        font5 = QFont()
+        font5.setFamilies([u"Arial Narrow"])
+        font5.setPointSize(10)
+        self.btnWelcome.setFont(font5)
 
         self.verticalLayout_4.addWidget(self.btnWelcome)
 
@@ -152,13 +210,19 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Gestione Tipi Visite", None))
         self.elTipo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins tipo prenotazione", None))
         self.elSede.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins sede  visita", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Inserire costo visita", None))
-        self.btnPlus.setText(QCoreApplication.translate("MainWindow", u"ins nuovo tipo", None))
+        self.btnInsertTipo.setText(QCoreApplication.translate("MainWindow", u"ins nuovo tipo", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Gestione Utenti", None))
+        self.elLastname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins cognome", None))
+        self.elFirstname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins nome", None))
+        self.elMail.setText("")
+        self.elMail.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins mail", None))
+        self.elPwd.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins password", None))
+        self.btnInsertUser.setText(QCoreApplication.translate("MainWindow", u"ins nuovo utente", None))
         self.btnRefresh.setText(QCoreApplication.translate("MainWindow", u"refresh", None))
-        self.elCognome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins cognome", None))
-        self.elNome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ins nome", None))
         self.lblMsg.setText(QCoreApplication.translate("MainWindow", u"----", None))
         self.btnWelcome.setText(QCoreApplication.translate("MainWindow", u"visualizza messaggio", None))
     # retranslateUi

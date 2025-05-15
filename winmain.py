@@ -4,6 +4,7 @@
 from PySide6.QtWidgets import QApplication, QMainWindow
 import sys
 #importo la classe tipo
+from gestUser import GestUser
 from gestTipo import GestTipo
 
 
@@ -31,7 +32,8 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         # aggancio ai pulsanti il click che lancia i relativi metodi
         self.ui.btnWelcome.clicked.connect(self.showMsg)
-        self.ui.btnPlus.clicked.connect(self.insnewtipo)
+        self.ui.btnInsertTipo.clicked.connect(self.insnewtipo)
+        self.ui.btnInsertUser.clicked.connect(self.insnewuser)
         self.ui.btnRefresh.clicked.connect(self.refresh)
         #metodo per iniziare con la combo gia' compilata
         self.refresh()
@@ -39,7 +41,7 @@ class MainWindow(QMainWindow):
     def showMsg(self):
         #refresh di display
         #leggo text da oggetti su interfaccia
-        newtx=self.ui.elCognome.text() + " " +self.ui.elNome.text()
+        newtx=self.ui.elLastname.text() + " " +self.ui.elFirstname.text()
         #stampo testo su proprieta' text di label
         self.ui.lblMsg.setText(newtx)
 
@@ -59,21 +61,47 @@ class MainWindow(QMainWindow):
 
     def refresh(self):
         eltipi=gestoreTipi.selAllTipo()
-        self.ui.cbTipo.clear()
+        self.ui.cbUser.clear()
         for tupla in eltipi:
-            self.ui.cbTipo.addItem(tupla[1])
+            self.ui.cbUser.addItem(tupla[1])
 
- 
+        elutenti=gestoreUtenti.selAllUser()
+        self.ui.cbUser.clear()
+        for tupla in elutenti:
+            self.ui.cbUser.addItem(tupla[2] + " " + tupla[1])
+
+        
+    def insnewuser(self):
+        #recupero dati da interfaccia 
+        firstname= self.ui.elFirstname.text()
+        lastname= self.ui.elLastname.text()
+        mail=self.ui.elMail.text()
+        pwd=self.ui.elPwd.text()
+        
+        #creo gestore tipi e gli faccio inseriro i dati presi da interfaccia in db
+        gest=GestUser()
+        newid=gest.createUser(lastname,firstname,mail,pwd)
+        newtx=f"nuovo iduser = {newid}"
+        self.ui.lblMsg.setText(newtx)
+        self.refresh()
+    
+    
+    
+
 
 #lista tipi
 eltipi=[]
 #creo gestiore tipi
 gestoreTipi=GestTipo()
 
+#lista tipi
+elutenti=[]
+#creo gestiore tipi
+gestoreUtenti=GestUser()
 
-print(eltipi)
-#lista utenti
-elUtenti=[]
+
+
+
 
 
 

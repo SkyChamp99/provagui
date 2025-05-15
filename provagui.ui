@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>777</width>
+    <width>620</width>
     <height>583</height>
    </rect>
   </property>
@@ -17,6 +17,23 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Gestione Tipi Visite</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QLineEdit" name="elTipo">
         <property name="font">
@@ -87,7 +104,7 @@ padding:4px;</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnPlus">
+       <widget class="QPushButton" name="btnInsertTipo">
         <property name="font">
          <font>
           <pointsize>16</pointsize>
@@ -100,6 +117,107 @@ padding:4px;</string>
       </item>
       <item>
        <widget class="QComboBox" name="cbTipo"/>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Gestione Utenti</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="elLastname">
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:2px solid #899999;border-radius:6;
+padding:4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>ins cognome</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="elFirstname">
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:2px solid #899999;border-radius:6;
+padding:4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>ins nome</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="elMail">
+        <property name="styleSheet">
+         <string notr="true">border:2px solid #899999;border-radius:6;
+padding:4px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>ins mail</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="elPwd">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:2px solid #899999;border-radius:6;
+padding:4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>ins password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnInsertUser">
+        <property name="text">
+         <string>ins nuovo utente</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cbUser"/>
       </item>
       <item>
        <spacer name="verticalSpacer">
@@ -122,40 +240,6 @@ padding:4px;</string>
        <widget class="QPushButton" name="btnRefresh">
         <property name="text">
          <string>refresh</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="elCognome">
-        <property name="font">
-         <font>
-          <family>Roboto</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border:2px solid #899999;border-radius:6;
-padding:4px;</string>
-        </property>
-        <property name="placeholderText">
-         <string>ins cognome</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="elNome">
-        <property name="font">
-         <font>
-          <family>Roboto</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border:2px solid #899999;border-radius:6;
-padding:4px;</string>
-        </property>
-        <property name="placeholderText">
-         <string>ins nome</string>
         </property>
        </widget>
       </item>
@@ -184,6 +268,9 @@ color:#ffff00;</string>
          <string>----</string>
         </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_4"/>
       </item>
       <item>
        <widget class="QPushButton" name="btnWelcome">

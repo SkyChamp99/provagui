@@ -9,7 +9,7 @@ import sys
 #ora posso usare Ui_MainWindow
 
 #!!!!!!!!!!!!!!cambiare nome classe from con file python qt compilato provagui.py!!!!!!!
-from provagui import Ui_MainWindow
+from provagui_ui import Ui_MainWindow
 
 
 #creo mia classe MainWindow che eredita le caratteristiche della classe
@@ -28,7 +28,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         # connetto determinati eventi agli oggetti con relativo metodo da eseguire
         self.ui.btnWelcome.clicked.connect(self.showMsg)
-        self.ui.btnPlus.clicked.connect(self.insnewtipo)
+        self.ui.btnInsertTipo.clicked.connect(self.insnewtipo)
         
     def showMsg(self):
         #refresh di display
