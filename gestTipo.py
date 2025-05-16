@@ -1,4 +1,4 @@
-import mysql.connector
+import mymysql.connector
 
 class GestTipo:
     __connDb= None
